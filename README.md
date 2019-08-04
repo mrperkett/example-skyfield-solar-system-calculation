@@ -23,7 +23,7 @@ pyenv local 3.5.7
 pipenv install
 ```
 
-At the time of writing, you get an error when attempting this with WSL, but the following works ([possibly related](https://github.com/pypa/pipenv/issues/3488)).
+At the time of writing, you get an error when attempting this with WSL, but the following works ([possibly related issue](https://github.com/pypa/pipenv/issues/3488)).
 
 ```
 pipenv install --python=`which python3`
