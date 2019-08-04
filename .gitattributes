@@ -1,0 +1,8 @@
+# Ignore the following files and directories
+.gitattributes export-ignore
+README.md export-ignore
+Pipfile export-ignore
+plot_distances.html export-ignore
+mean_pairwise_distances-992_years.csv export-ignore
+/images export-ignore
+example_output.tgz export-ignore
