@@ -23,10 +23,19 @@ pyenv local 3.5.7
 pipenv install
 ```
 
-At the time of writing, you get an error when attempting this with WSL.  The following works.
+At the time of writing, you get an error when attempting this with WSL, but the following works ([possibly related](https://github.com/pypa/pipenv/issues/3488)).
 
 ```
 pipenv install --python=`which python3`
+```
+
+## (An alternative to pipenv)
+```
+# an alternative to using pipenv for the virtual environment
+pyenv virtualenv 3.5.7 skyfield-env
+pyenv local skyfield-env
+python3 -m pip install skyfield
+python3 -m pip install scipy
 ```
 
 # Running
@@ -59,6 +68,14 @@ output/
 `example_output.tgz` contains example data for a very short run (so the average distances have not yet converged to their long time average).
 
 # Plotting
+
 Plots are generated using Jupyter notebook (`plot_distances.ipynb`) with Python3.  An export of the notebook is given by `plot_distances.html` and the resulting plots are provided in the `images/` folder.
 
 # Useful Links
+
+* FTP to directly download .bsp files
+  * ftp://ssd.jpl.nasa.gov/pub/eph/planets/bsp/
+* Web downloads for .bsp files (doesn't have downloads for the longer timescales?)
+  * https://naif.jpl.nasa.gov/pub/naif/JUNO/kernels/spk/
+* GitHub page with utilities to manipulate JPL DE ephemeris data.  Links to other pages with information I found useful to skim.
+  * https://github.com/Bill-Gray/jpl_eph
